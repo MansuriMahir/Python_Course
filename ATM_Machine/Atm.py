@@ -1,6 +1,6 @@
 # creating ATm Machne 
 
-
+from Atm_Admin import Admin, ADMIN_ACCOUNT, ADMIN_PIN
 
 def my_decorator(func):
     def wrap_func(*args, **kwargs):
@@ -143,15 +143,33 @@ def create_account():
 print("Welcome to the ATM Machine!")
 
 while True:
-    print("1. Login to Exiting Account")
-    print("2. Create New Account")
-    print("3. View Total Users")
-    print("4. View User List with Details")
-    print("4. Exit")
+    print("1. Login as Admin")
+    print("2. Login to Exiting Account")
+    print("3. Create New Account")
+    print("4. View Total Users")
+    print("5. View User List with Details")
+    print("6. Exit")
 
     main_Choice = input("Enter your choice: ")
 
     if main_Choice == "1":
+        admin_account = input("Enter Admin Account Name: ")
+        if admin_account == ADMIN_ACCOUNT:
+            entered_pin = input("Enter admin PIN: ")
+            admin = Admin(admin_account, ADMIN_ACCOUNT)
+            if admin.authenticate(entered_pin):
+                while True:
+                    print("\n--- Admin Panel ---")
+                    print("1. View All Users")
+                    print("2. Delete User")
+                    print("3. Reset User PIN")
+                    print("4. Reset User Balance")
+                    print("5. View Total ATM Funds")
+                    print("6. Exit Admin Panel")
+
+                    admin_choice = input("Enter your Choice: ")
+
+    if main_Choice == "2":
         account_number = input("Enter your account Number: ")
 
 
@@ -173,16 +191,16 @@ while True:
         else:
             print("Account not found. please try again...")
     
-    elif main_Choice == "2":
+    elif main_Choice == "3":
         create_account()
     
-    elif main_Choice == "3":
+    elif main_Choice == "4":
         print(f'\nTotal User in ATM System: {len(user)}')
 
-    elif main_Choice == "4":
+    elif main_Choice == "5":
         show_user_list()       
 
-    elif main_Choice == "5":
+    elif main_Choice == "6":
         print("Thank you for using the ATM system. Goodbye!")
         break
     else:
