@@ -1,0 +1,51 @@
+# Polymorphism 
+# ploy means having many forms. morphims are the forms or characteristics of an object that can be used in different ways.
+# it has ablilty to perform different actions or operations based on the object's type.
+
+class User:
+    def sign_in(self):
+        print('Logged in')
+
+    def attack(self):
+        print('Do Nothing')
+
+class wizard(User):
+    def __init__(self,name, power):
+        self.name = name
+        self.power = power
+
+    def attack(self):
+        User.attack(self)  # calling parent class method
+        print(f'attacking with power of {self.power} ')
+
+class Archer(User):
+    def __init__(self,name, num_arrows):
+        self.name = name
+        self.num_arrows = num_arrows
+
+    def attack(self):
+        print(f'attacking with arrows : arrows left-{self.num_arrows}')
+    
+
+
+wizard1 = wizard('Nehal', 100)
+
+
+archer1 = Archer('Tony', 200)
+
+# wizard1.sign_in()
+# archer1.sign_in()
+
+# print(wizard1.attack())
+# print(archer1.attcak())
+
+# def player_attack(char):
+#     char.attack()
+
+# player_attack(wizard1)
+
+# player_attack(archer1)
+
+
+for char in [wizard1, archer1]:
+    char.attack()

@@ -1,0 +1,66 @@
+PYTHON  
+-- Every thing in python is object 
+
+-- interpreter it run code and check code line by line and translate to machine language(each line executed line by line)...
+-- compiler it run code all at once and direct translate to machine language..
+
+--Variables 
+- snake_case its means all lover case and underscore will come in that while giving name to variables 
+eg:- user_id = 10...
+- start with lovercase and underscore
+eg:- user_name , _user_name
+-letter , number , underscore
+-case sensitive
+-Don't overwrite  keywords 
+
+
+---> Matrix 
+- in python matrix are 2D arrays[it means 2 dymencial array (array inside array)]
+- eg :- matrix = [
+    [1,2,3],
+    [[1],2,3,4]
+]
+- array inside array its called sub array  
+
+---> List Method 
+method that add (.) after the list 
+#adding 
+print(xyz.append) 
+
+#insert 
+-- .insert modified list in place 
+--  .insert is used to inset a value between the value for eg basket = [1,2,3]
+basket.insert(2,100) -- so it will insert between 2 and 3 a number 100
+
+
+#Extend 
+-- .extend is an actual item or object take what we call an iterable that some thing we can loop 
+new_list = basket.extend([100 , 101])
+- it will modified list in place adds and Extend  the list 
+
+#removing
+1 pop
+basket.pop()
+print(basket)
+it will remove latest add value and give 
+how much we write it will remove all new added value that we had place 
+if we do basket.pop(0)so i will removw from index os it will show output  [2,3,4] it will remove
+
+2. remove 
+basket.remove(4)
+print(basket) 
+it will remove  
+
+3. CLEAR 
+it will clear all the list value  and give blank output  
+
+# index
+-- it give a value , a start, and a stop 
+eg:- basket = [1,2,3,4,5]
+print(baskte.index(2))
+so output will be 1 because number 2 is index of 1 
+-- index is call  python keywords  \
+
+--- there are so many keywords in python for example me are using "in" keywords it will show true and false 
+eg basket(a,b,c,d)
+ 
